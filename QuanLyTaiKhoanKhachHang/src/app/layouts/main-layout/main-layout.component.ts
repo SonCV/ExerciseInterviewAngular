@@ -12,7 +12,7 @@ export class MainLayoutComponent {
 
     constructor() { }
 
-    sideBarToggler() {
+    sideBarToggler(value) {
         this.sideBarOpen = !this.sideBarOpen;
     }
 }

@@ -15,13 +15,17 @@ const routes: Routes = [
       component: ListAccountCustomerComponent
   },
   {
-      path: 'detail-account-customer',
+      path: 'detail-account-customer/:id',
       component: DetailAccountCustomerComponent
   },
   {
       path: 'create-account-customer',
       component: AccessAccountCustomerComponent
-  }
+  },
+  {
+    path: 'update-account-customer/:id',
+    component: AccessAccountCustomerComponent
+}
 ];
 
 @NgModule({

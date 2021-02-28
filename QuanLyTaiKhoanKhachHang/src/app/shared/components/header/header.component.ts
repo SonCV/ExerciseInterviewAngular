@@ -11,7 +11,7 @@ export class HeaderComponent {
     @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
 
     toggleSideBar() {
-        this.toggleSideBarForMe.emit();
+        this.toggleSideBarForMe.emit(null);
         setTimeout(() => {
             window.dispatchEvent(
                 new Event('resize')
