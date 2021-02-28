@@ -27,6 +27,7 @@ export class AccessAccountCustomerComponent implements OnInit{
             this.title = "UPDATE ACCOUNT CUSTOMER"
             this.nameButton = "Update account";
             this.isUpdate = true;
+            this.patchValueForm(this.route.snapshot.params.id);
         }else {
             this.isUpdate = false;
             this.title = "CREATE ACCOUNT CUSTOMER";
@@ -52,7 +53,9 @@ export class AccessAccountCustomerComponent implements OnInit{
     }
 
     patchValueForm(id) {
-
+        let dataStorage: any[] = JSON.parse(localStorage.getItem("listAccountCustomer"));
+        let account = dataStorage.filter(account => account.id == id);
+        console.log('account : ', account);
     }
 
     createAccountCustomer() {
