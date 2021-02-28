@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AccountCustomerService } from 'src/app/core/services/account-customer.service';
 
 @Component({
     selector: 'app-list-account-customer',
@@ -43,13 +44,21 @@ export class ListAccountCustomerComponent implements OnInit {
             name: "Email"
         }
     ];
-    dataTable = JSON.parse(localStorage.getItem("listAccountCustomer"));
+    dataTable: any;
+    totalRecord: number = 0;
     displayedColumns = ['firstname', 'lastname', 'account_number', 'balance', 'age', 'address', 'employer', 'email', 'action'];
 
-    constructor(private router: Router) {
+    constructor(private router: Router,
+        private accountCustomerService: AccountCustomerService) {
 
     }
     ngOnInit() {
+        this.getAllAccountCustomer();
+    }
+
+    getAllAccountCustomer() {
+        this.dataTable =  this.accountCustomerService.getAllAccount();
+        this.totalRecord = this.dataTable.length;
     }
 
     createAccountCustomer() {

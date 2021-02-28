@@ -4,7 +4,8 @@
         <button mat-raised-button color="primary" class="btn-create" (click)="createAccountCustomer()">Create Account</button>
     </div>
     <mat-card-content style="margin-top: 25px">
-        <app-data-table [dataTable]="dataTable" [buildColumns]="buildColumns" [displayedColumns]="displayedColumns">
+        <app-data-table [dataTable]="dataTable" [buildColumns]="buildColumns" [displayedColumns]="displayedColumns"
+        [totalRecord]="totalRecord">
         </app-data-table>
     </mat-card-content>
 </mat-card>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Accounts } from 'src/assets/data/accounts2';
-import { StorageService } from './core/services/storage.service';
 
 @Component({
   selector: 'app-root',
@@ -10,16 +9,12 @@ import { StorageService } from './core/services/storage.service';
 export class AppComponent implements OnInit {
 
   title = 'Account Customer Management';
-  dataStorage = Accounts;
   
-  constructor(private storageService: StorageService) {
+  constructor() {
 
   }
 
   ngOnInit() {
-    if(localStorage.getItem("listAccountCustomer") == null) {
-      localStorage.setItem("listAccountCustomer", JSON.stringify(this.dataStorage));
-    }
     
   }
 }
